@@ -1,0 +1,12 @@
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',user='root',passwd='test',database='supermarket')
+mycursor=mydb.cursor()
+mycursor.execute('create table category (id int(3) Primary key auto_increment,Category varchar(20))')
+mycursor.execute('insert into category values(1,"Vegetables")')
+mycursor.execute('insert into category values(2,"Fruits")')
+mycursor.execute('insert into category values(3,"Personal hygiene")')
+mycursor.execute('insert into category values(4,"Dairy &Poultry")')
+mycursor.execute('insert into category values(5,"Grains ")')
+mydb.commit()
+mydb.close()
+print('exceuted')
